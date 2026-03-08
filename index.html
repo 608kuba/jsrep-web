@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSRep – Opravy mobilů a počítačů</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:linear-gradient(145deg,#020617,#050c1a,#0a1c3b);
+color:white;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px;
+}
+
+.container{
+max-width:900px;
+width:100%;
+backdrop-filter:blur(20px);
+background:rgba(20,30,60,0.45);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+padding:40px;
+box-shadow:0 0 60px rgba(0,80,255,0.25);
+}
+
+h1{
+font-size:42px;
+font-weight:600;
+margin-bottom:10px;
+background:linear-gradient(90deg,#6fb0ff,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+opacity:0.8;
+margin-bottom:30px;
+}
+
+.contacts{
+margin-bottom:40px;
+}
+
+.contacts div{
+margin:8px 0;
+font-size:18px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+input, textarea{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:12px;
+padding:14px;
+color:white;
+font-size:15px;
+outline:none;
+transition:0.2s;
+}
+
+input:focus, textarea:focus{
+border:1px solid #4da3ff;
+box-shadow:0 0 10px rgba(77,163,255,0.5);
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+button{
+background:linear-gradient(135deg,#1f6fff,#4aa8ff);
+border:none;
+border-radius:12px;
+padding:14px;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.25s;
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,80,255,0.4);
+}
+
+footer{
+margin-top:30px;
+font-size:14px;
+opacity:0.6;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>JSRep</h1>
+<div class="subtitle">Opravy mobilů a počítačů</div>
+
+<div class="contacts">
+<div>📞 Telefon: +420 608 400 694</div>
+<div>✉️ Email: jakub.svoboda608@gmail.com</div>
+</div>
+
+<h2>Formulář pro opravu</h2>
+
+<form action="https://formsubmit.co/jakub.svoboda608@gmail.com" method="POST">
+
+<input type="text" name="Jméno" placeholder="Jméno" required>
+
+<input type="tel" name="Telefon" placeholder="Telefonní číslo" required>
+
+<input type="email" name="Email" placeholder="Email" required>
+
+<input type="text" name="Zařízení" placeholder="Značka a typ zařízení" required>
+
+<textarea name="Problém" placeholder="Popište problém..." required></textarea>
+
+<input type="hidden" name="_subject" value="Nová žádost o opravu - JSRep">
+<input type="hidden" name="_captcha" value="false">
+
+<button type="submit">Odeslat žádost o opravu</button>
+
+</form>
+
+<footer>
+© JSRep
+</footer>
+
+</div>
+
+</body>
+</html>
