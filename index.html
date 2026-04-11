@@ -1,162 +1,32 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BZHQ0WEWWD"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-BZHQ0WEWWD');
-</script>
-
-<link rel="icon" href="IMG_1772.ico" type="image/x-icon">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JSRep – Opravíme vám vaše zařízení</title>
 
+<link rel="icon" href="IMG_1772.ico">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 body{
 background:linear-gradient(145deg,#020617,#050c1a,#0a1c3b);
-color:white;
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:40px;
+color:white;display:flex;justify-content:center;align-items:center;
+min-height:100vh;padding:40px;
 }
 
 /* MENU */
-.menu-btn{
-position:fixed;
-top:20px;
-left:20px;
-z-index:1000;
-cursor:pointer;
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.menu-lines div{
-width:25px;
-height:3px;
-background:white;
-margin:4px 0;
-}
-
-.menu-text{
-font-weight:600;
-}
-
-.menu{
-position:fixed;
-top:0;
-left:-100%;
-width:260px;
-height:100%;
-background:#020617;
-padding:40px 20px;
-transition:0.3s;
-z-index:999;
-}
-
-.menu.active{
-left:0;
-}
-
-.menu a{
-display:block;
-margin:20px 0;
-color:white;
-text-decoration:none;
-font-size:18px;
-cursor:pointer;
-}
-
-/* CONTENT */
-.section{
-display:none;
-}
-
-.section.active{
-display:block;
-}
+.menu-btn{position:fixed;top:20px;left:20px;cursor:pointer;display:flex;gap:10px;z-index:1000;}
+.menu-lines div{width:25px;height:3px;background:white;margin:4px 0;}
+.menu{position:fixed;top:0;left:-100%;width:260px;height:100%;background:#020617;padding:40px 20px;transition:0.3s;}
+.menu.active{left:0;}
+.menu a{display:block;margin:20px 0;color:white;text-decoration:none;}
+.menu a.active{color:#4aa8ff;}
 
 .container{
-max-width:900px;
-width:100%;
-backdrop-filter:blur(20px);
-background:rgba(20,30,60,0.45);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:20px;
-padding:40px;
-box-shadow:0 0 60px rgba(0,80,255,0.25);
-}
-
-h1{
-font-size:42px;
-font-weight:600;
-margin-bottom:10px;
-background:linear-gradient(90deg,#6fb0ff,#ffffff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.subtitle{
-opacity:0.8;
-margin-bottom:30px;
-}
-
-.contacts div{
-margin:8px 0;
-font-size:18px;
-}
-
-form{
-display:flex;
-flex-direction:column;
-gap:16px;
-}
-
-input, textarea{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-border-radius:12px;
-padding:14px;
-color:white;
-font-size:15px;
-outline:none;
-}
-
-textarea{
-min-height:120px;
-}
-
-button{
-background:linear-gradient(135deg,#1f6fff,#4aa8ff);
-border:none;
-border-radius:12px;
-padding:14px;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-footer{
-margin-top:30px;
-font-size:14px;
-opacity:0.6;
-text-align:center;
+max-width:900px;width:100%;background:rgba(20,30,60,0.45);
+padding:40px;border-radius:20px;
 }
 
 </style>
@@ -164,107 +34,45 @@ text-align:center;
 
 <body>
 
-<!-- MENU BUTTON -->
 <div class="menu-btn" onclick="toggleMenu()">
 <div class="menu-lines">
-<div></div>
-<div></div>
-<div></div>
+<div></div><div></div><div></div>
 </div>
-<span class="menu-text">MENU</span>
+<span>MENU</span>
 </div>
 
-<!-- MENU -->
 <div class="menu" id="menu">
-<a onclick="showSection('home')">Kontakty</a>
-<a onclick="showSection('form')">Objednání servisu</a>
-<a onclick="showSection('about')">Jak JSRep vzniklo</a>
+<a href="index.html" class="active">Kontakty</a>
+<a href="objednani.html">Objednání servisu</a>
+<a href="about.html">Jak JSRep vzniklo</a>
 </div>
 
 <div class="container">
-
 <h1>JSRep</h1>
-<div class="subtitle">Opravy mobilů a počítačů</div>
+<p>Opravy mobilů a počítačů</p>
 
-<!-- HOME -->
-<div id="home" class="section active">
-<div class="contacts">
-<div>📞 Telefon: +420608400694</div>
-<div>✉️ Email: servis@jsrep.xyz</div>
-<div>Specializujeme se na opravy:</div>
-<div>- Mobilů</div>
+<br>
+
+<div>📞 +420608400694</div>
+<div>✉️ servis@jsrep.xyz</div>
+
+<br>
+
+<div>Specializujeme se na:</div>
+<div>- Mobily</div>
 <div>- PC</div>
-<div>- Notebooků</div>
-<div>- Herních konzolí</div>
-<div>- A jiná chytrá zařízení</div>
-</div>
+<div>- Notebooky</div>
+<div>- Konzole</div>
 
-<a href="https://wa.me/420728824050" target="_blank" style="
-display:inline-block;
-padding:15px 25px;
-background:rgba(15,23,42,0.9);
-color:#fff;
-border-radius:15px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 4px 20px rgba(255,255,255,0.5);
-">Napiš nám na WhatsApp</a>
-</div>
+<br>
 
-<!-- FORM -->
-<div id="form" class="section">
-<h2>Formulář pro opravu</h2>
-
-<form action="https://formsubmit.co/jakub.svoboda608@gmail.com" method="POST">
-<input type="text" name="Jméno" placeholder="Jméno" required>
-<input type="tel" name="Telefon" placeholder="Telefonní číslo" required>
-<input type="email" name="Email" placeholder="Email" required>
-<input type="text" name="Zařízení" placeholder="Značka a model zařízení" required>
-<textarea name="Problém" placeholder="Popište problém" required></textarea>
-
-<input type="hidden" name="_subject" value="Nová žádost o opravu - JSRep">
-<input type="hidden" name="_captcha" value="false">
-
-<button type="submit">Odeslat žádost o opravu</button>
-</form>
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="section">
-<h2>Jak JSRep vzniklo</h2>
-
-<p style="margin-top:10px; opacity:0.85;">
-Za JSRep stojí Jakub Svoboda. Celý projekt vznikl z jednoduchého důvodu – rozbitý mobil a neochota platit vysoké ceny za opravu.
-</p>
-
-<p style="margin-top:10px; opacity:0.85;">
-První zařízení bylo rozebráno ze zvědavosti, postupně ale přišlo pochopení, jak elektronika funguje. Následně přišla první úspěšná oprava – iPhone 5 zakoupený za 100 Kč, na kterém vznikly první zkušenosti.
-</p>
-
-<p style="margin-top:10px; opacity:0.85;">
-Z koníčku se postupně stala specializace. Dnes se JSRep zaměřuje na opravy mobilů, počítačů a další elektroniky s důrazem na kvalitu a férový přístup.
-</p>
-
-<p style="margin-top:10px; opacity:0.85;">
-Název JSRep vznikl z iniciál Jakub Svoboda a slova „Rep“, které znamená repas.
-</p>
-</div>
-
-<footer>
-© JSRep
-</footer>
+<a href="https://wa.me/420728824050" target="_blank">Napiš nám na WhatsApp</a>
 
 </div>
 
 <script>
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("active");
-}
-
-function showSection(id){
-document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
-document.getElementById(id).classList.add("active");
-document.getElementById("menu").classList.remove("active");
 }
 </script>
 
