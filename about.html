@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O nás – JSRep</title>
+
+<link rel="icon" href="IMG_1772.ico">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{
+background:linear-gradient(145deg,#020617,#050c1a,#0a1c3b);
+color:white;display:flex;justify-content:center;align-items:center;
+min-height:100vh;padding:40px;
+}
+
+.menu-btn{position:fixed;top:20px;left:20px;cursor:pointer;display:flex;gap:10px;}
+.menu-lines div{width:25px;height:3px;background:white;margin:4px 0;}
+.menu{position:fixed;top:0;left:-100%;width:260px;height:100%;background:#020617;padding:40px 20px;transition:0.3s;}
+.menu.active{left:0;}
+.menu a{display:block;margin:20px 0;color:white;text-decoration:none;}
+.menu a.active{color:#4aa8ff;}
+
+.container{max-width:900px;width:100%;background:rgba(20,30,60,0.45);padding:40px;border-radius:20px;}
+
+</style>
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">
+<div class="menu-lines"><div></div><div></div><div></div></div>
+<span>MENU</span>
+</div>
+
+<div class="menu" id="menu">
+<a href="index.html">Kontakty</a>
+<a href="objednani.html">Objednání servisu</a>
+<a href="about.html" class="active">Jak JSRep vzniklo</a>
+</div>
+
+<div class="container">
+
+<h2>Jak JSRep vzniklo</h2>
+
+<p>
+Za JSRep stojí Jakub Svoboda. Celý projekt vznikl z jednoduchého důvodu – rozbitý mobil a neochota platit vysoké ceny za opravu.
+</p>
+
+<br>
+
+<p>
+První oprava proběhla na iPhone 5 zakoupeném za 100 Kč. Postupně přišlo pochopení elektroniky a zkušenosti.
+</p>
+
+<br>
+
+<p>
+Dnes se JSRep zaměřuje na opravy mobilů, počítačů a další elektroniky s důrazem na kvalitu a férový přístup.
+</p>
+
+<br>
+
+<p>
+Název JSRep vznikl z iniciál Jakub Svoboda a slova „Rep“ jako repas.
+</p>
+
+</div>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
