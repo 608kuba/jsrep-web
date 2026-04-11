@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Objednání opravy – JSRep</title>
+
+<link rel="icon" href="IMG_1772.ico">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{
+background:linear-gradient(145deg,#020617,#050c1a,#0a1c3b);
+color:white;display:flex;justify-content:center;align-items:center;
+min-height:100vh;padding:40px;
+}
+
+/* MENU stejné */
+.menu-btn{position:fixed;top:20px;left:20px;cursor:pointer;display:flex;gap:10px;}
+.menu-lines div{width:25px;height:3px;background:white;margin:4px 0;}
+.menu{position:fixed;top:0;left:-100%;width:260px;height:100%;background:#020617;padding:40px 20px;transition:0.3s;}
+.menu.active{left:0;}
+.menu a{display:block;margin:20px 0;color:white;text-decoration:none;}
+.menu a.active{color:#4aa8ff;}
+
+.container{max-width:900px;width:100%;background:rgba(20,30,60,0.45);padding:40px;border-radius:20px;}
+
+input,textarea{width:100%;margin:10px 0;padding:12px;border-radius:8px;border:none;}
+button{padding:12px;border:none;border-radius:8px;cursor:pointer;}
+
+</style>
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">
+<div class="menu-lines"><div></div><div></div><div></div></div>
+<span>MENU</span>
+</div>
+
+<div class="menu" id="menu">
+<a href="index.html">Kontakty</a>
+<a href="objednani.html" class="active">Objednání servisu</a>
+<a href="about.html">Jak JSRep vzniklo</a>
+</div>
+
+<div class="container">
+
+<h2>Formulář pro opravu</h2>
+
+<form action="https://formsubmit.co/jakub.svoboda608@gmail.com" method="POST">
+
+<input type="text" name="Jméno" placeholder="Jméno" required>
+<input type="tel" name="Telefon" placeholder="Telefon" required>
+<input type="email" name="Email" placeholder="Email" required>
+<input type="text" name="Zařízení" placeholder="Zařízení" required>
+
+<textarea name="Problém" placeholder="Popis problému" required></textarea>
+
+<input type="hidden" name="_captcha" value="false">
+
+<button type="submit">Odeslat</button>
+
+</form>
+
+</div>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
