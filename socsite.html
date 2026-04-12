@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sociální sítě – JSRep</title>
 
+<link rel="icon" href="IMG_1772.ico">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:linear-gradient(145deg,#020617,#050c1a,#0a1c3b);
+color:white;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px;
+}
+
+/* MENU */
+.menu-btn{
+position:fixed;
+top:20px;
+left:20px;
+z-index:1000;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.menu-lines div{
+width:25px;
+height:3px;
+background:white;
+margin:4px 0;
+}
+
+.menu{
+position:fixed;
+top:0;
+left:-100%;
+width:260px;
+height:100%;
+background:#020617;
+padding:40px 20px;
+transition:0.3s;
+z-index:999;
+}
+
+.menu.active{
+left:0;
+}
+
+.menu a{
+display:block;
+margin:20px 0;
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+.menu a.active{
+color:#4aa8ff;
+}
+
+/* CONTAINER */
+.container{
+max-width:900px;
+width:100%;
+backdrop-filter:blur(20px);
+background:rgba(20,30,60,0.45);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+padding:40px;
+box-shadow:0 0 60px rgba(0,80,255,0.25);
+}
+
+h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+p{
+opacity:0.8;
+}
+
+.socials{
+display:flex;
+gap:15px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.socials a{
+padding:15px 20px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:12px;
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.25s;
+}
+
+.socials a:hover{
+background:rgba(255,255,255,0.1);
+transform:translateY(-2px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="toggleMenu()">
+<div class="menu-lines">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<span>MENU</span>
+</div>
+
+<!-- MENU -->
+<div class="menu" id="menu">
+<a href="index.html">Kontakty</a>
+<a href="objednani.html">Objednání servisu</a>
+<a href="about.html">Jak JSRep vzniklo</a>
+<a href="socsite.html" class="active">Sociální sítě</a>
+</div>
+
+<div class="container">
+
+<h1>Sociální sítě</h1>
+
+<p>
+Sleduj nás a podívej se na opravy v praxi, reálné výsledky a práci ze zákulisí.
+</p>
+
+<div class="socials">
+
+<a href="https://www.instagram.com/jsrep.cz/" target="_blank">📸 Instagram</a>
+
+<a href="https://www.facebook.com/profile.php?id=61565171018116" target="_blank">📘 Facebook</a>
+
+</div>
+
+</div>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
